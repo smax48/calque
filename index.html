@@ -6,7 +6,16 @@
     <link rel="icon" type='image/png' href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <script src="math.min.js"></script>
-    <script src="recalc.js"></script>
+    <script src="lodash.min.js"></script>
+    <script src="calque.js"></script>
+    <script>
+        window.onload = function () {
+            var input = document.getElementById('input');
+            var output = document.getElementById('output');
+            window.calque = new Calque(input, output);
+            input.select();
+        }
+    </script>
 </head>
 <body>
     <div class="interface">
@@ -32,6 +41,14 @@
         <h2>Functions</h2>
         <pre data-result=" fn">pow2(x) = x ^ 2</pre>
         <pre data-result=" = 36">pow2(6)</pre>
+
+        <h2>Comments</h2>
+        <pre># This is a comment</pre>
+        <pre data-result=" = 4">a = 2 * 2 # And this</pre>
+
+        <h2>Last result</h2>
+        <pre data-result=" = 4">2 * 2</pre>
+        <pre data-result=" = 5">last + 1</pre>
 
         <hr>
 
